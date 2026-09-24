@@ -1,29 +1,29 @@
 <div dir="rtl" align="right">
 
-# بک‌اند دیوار
+# 🏠 Bravo Vendo — Backend
 
-[English Version](README.en.md)
-بک‌اند پروژه دیوار (سایت آگهی آنلاین) با Node.js، Express و MongoDB.
+بک‌اند پروژه Vendo (پلتفرم آگهی آنلاین) با Node.js، Express و MongoDB.
 
 ---
 
 ## 📖 درباره پروژه
 
-این پروژه بک‌اند یک سایت آگهی آنلاین مشابه دیوار است. کاربران می‌توانند ثبت‌نام کنند، آگهی ثبت کنند، دسته‌بندی داشته باشند و عکس آپلود کنند.
+این پروژه بک‌اند یک پلتفرم آگهی آنلاین مشابه دیوار است. کاربران می‌توانند ثبت‌نام کنند، آگهی ثبت کنند، دسته‌بندی داشته باشند و عکس آپلود کنند.
 
-این پروژه فقط شامل **بک‌اند** است. فرانت‌اند آن در مخزن جداگانه‌ای قرار دارد.
+این پروژه فقط شامل بک‌اند است. فرانت‌اند آن در مخزن جداگانه‌ای قرار دارد.
 
 ---
 
 ## 🛠 تکنولوژی‌ها
 
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT
-- Swagger
-- Multer
+- Node.js — محیط اجرا
+- Express.js — فریم‌ورک وب
+- MongoDB — دیتابیس
+- Mongoose — ODM
+- JWT — احراز هویت
+- Swagger — مستندات API
+- Multer — آپلود فایل
+- Jalali-Moment — تاریخ شمسی
 
 ---
 
@@ -31,10 +31,10 @@
 
 - ورود با کد پیامکی (OTP)
 - مدیریت کاربران
-- مدیریت دسته‌بندی‌ها
-- مدیریت گزینه‌ها
+- مدیریت دسته‌بندی‌ها (ساختار درختی)
+- مدیریت گزینه‌ها (Option برای هر دسته)
 - ساخت و حذف آگهی
-- آپلود عکس
+- آپلود تصاویر
 - مستندات API با Swagger
 - مدیریت متمرکز خطاها
 
@@ -42,71 +42,48 @@
 
 ## 📁 ساختار پروژه
 
-<div dir="rtl" align="right">
-
-# بک‌اند دیوار
-
-بک‌اند پروژه دیوار (سایت آگهی آنلاین) با Node.js، Express و MongoDB.
-
-## درباره پروژه
-
-این پروژه بک‌اند یک سایت آگهی آنلاین مشابه دیوار است. کاربران می‌توانند ثبت‌نام کنند، آگهی ثبت کنند، دسته‌بندی داشته باشند و عکس آپلود کنند.
-
-این پروژه فقط شامل بک‌اند است. فرانت‌اند آن در مخزن جداگانه‌ای قرار دارد.
-
-## تکنولوژی‌ها
-
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT
-- Swagger
-- Multer
-
-## امکانات
-
-- ورود با کد پیامکی (OTP)
-- مدیریت کاربران
-- مدیریت دسته‌بندی‌ها
-- مدیریت گزینه‌ها
-- ساخت و حذف آگهی
-- آپلود عکس
-- مستندات API با Swagger
-- مدیریت متمرکز خطاها
-
-## ساختار پروژه
-
-divar/
-├── public/ فایل‌های استاتیک
+Bravo Vendo/
+├── public/                  فایل‌های استاتیک
+│   └── upload/              تصاویر آپلود شده
 ├── src/
-│ ├── common/ بخش‌های عمومی
-│ ├── config/ تنظیمات
-│ ├── modules/ ماژول‌ها
-│ │ ├── auth/ احراز هویت
-│ │ ├── user/ کاربران
-│ │ ├── category/ دسته‌بندی‌ها
-│ │ ├── option/ گزینه‌ها
-│ │ └── post/ آگهی‌ها
-│ ├── app.routes.js روتر اصلی
-│ └── main.js نقطه شروع
+│   ├── common/
+│   │   ├── constant/        ثابت‌ها
+│   │   ├── exception/       مدیریت خطاها
+│   │   ├── guard/           گاردهای احراز هویت
+│   │   ├── messages/        پیام‌ها
+│   │   ├── middleware/      میدل‌ورها
+│   │   └── utils/           توابع کمکی
+│   ├── config/
+│   │   ├── mongoose.config.js
+│   │   └── swagger.config.js
+│   ├── modules/
+│   │   ├── auth/            احراز هویت
+│   │   ├── user/            کاربران
+│   │   ├── category/        دسته‌بندی‌ها
+│   │   ├── option/          گزینه‌ها
+│   │   └── post/            آگهی‌ها
+│   ├── app.routes.js        روتر اصلی
+│   └── main.js              نقطه شروع
 ├── .env
+├── .gitignore
 ├── package.json
 └── README.md
 
-## نصب و راه‌اندازی
+---
+
+## 🚀 نصب و راه‌اندازی
 
 ### پیش‌نیازها
 
 - Node.js نسخه ۱۸ یا بالاتر
-- MongoDB
+- MongoDB (لوکال یا Atlas)
 
 ### مراحل
 
 ۱. مخزن را clone کنید:
 
-git clone https://github.com/hamidreza-babazamani/divar.git
-cd divar
+git clone https://github.com/hamidreza-babazamani/Bravo-Vendo.git
+cd Bravo-Vendo
 
 ۲. پکیج‌ها را نصب کنید:
 
@@ -115,8 +92,9 @@ npm install
 ۳. فایل .env بسازید و این مقادیر را در آن قرار دهید:
 
 PORT=3400
-MONGODB_URL=mongodb://localhost:27017/divar
-COOKIE_SECRET_KEY=your-secret-key-here
+MONGODB_URL=mongodb://localhost:27017/vendo
+COOKIE_SECRET_KEY=your-super-secret-key
+JWT_SECRET_KEY=your-jwt-secret-key
 NODE_ENV=development
 
 ۴. سرور را اجرا کنید:
@@ -127,52 +105,74 @@ npm start
 
 http://localhost:3400
 
-## مستندات API
+---
+
+## 📚 مستندات API
+
+پس از اجرای سرور، مستندات Swagger در آدرس زیر در دسترس است:
 
 http://localhost:3400/swagger
 
-## آدرس‌های API
+---
 
-### Auth
+## 🛣 آدرس‌های API
+
+### 🔐 Auth
 
 - POST /auth/send-otp — ارسال کد پیامکی
 - POST /auth/check-otp — تایید کد و ورود
 - GET /auth/logout — خروج از حساب
 
-### User
+### 👤 User
 
-- GET /user/whoami — دریافت پروفایل
-- PATCH /user/edit — ویرایش پروفایل
+- GET /user/whoami — دریافت اطلاعات کاربر لاگین‌شده
 
-### Category
+### 📂 Category
 
 - POST /category — ساخت دسته‌بندی
 - GET /category — دریافت همه دسته‌بندی‌ها
 - DELETE /category/:id — حذف دسته‌بندی
 
-### Option
+### ⚙️ Option
 
 - POST /option — ساخت گزینه
 - GET /option — دریافت همه گزینه‌ها
-- GET /option/by-category/:categoryId — گزینه‌های یک دسته
 - GET /option/:id — دریافت یک گزینه
+- PUT /option/:id — ویرایش گزینه
 - DELETE /option/:id — حذف گزینه
+- GET /option/by-category/:categoryId — گزینه‌های یک دسته (با id)
+- GET /option/by-category-slug/:slug — گزینه‌های یک دسته (با slug)
 
-### Post
+### 📝 Post
 
-- POST /post/create — ساخت آگهی
+- GET / — دریافت همه آگهی‌ها
+- POST /post/create — ساخت آگهی جدید
 - GET /post/my — آگهی‌های من
 - GET /post/:id — دریافت یک آگهی
-- DELETE /post/:id — حذف آگهی
+- DELETE /post/delete/:id — حذف آگهی
 
-## نکات مهم
+---
+
+## 🔒 امنیت
+
+- احراز هویت با JWT ذخیره‌شده در کوکی HttpOnly
+- هش کردن داده‌های حساس
+- مدیریت CORS
+- اعتبارسنجی ورودی‌ها
+- مدیریت متمرکز خطاها
+
+---
+
+## ⚠️ نکات مهم
 
 - فایل .env را در GitHub آپلود نکنید
 - پوشه node_modules را در GitHub آپلود نکنید
 - برای اجرا، ابتدا MongoDB را روشن کنید
 
-## ارتباط
+---
 
-GitHub: @hamidreza-babazamani
+## 📞 ارتباط
+
+GitHub: https://github.com/hamidreza-babazamani
 
 </div>
