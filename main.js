@@ -14,7 +14,7 @@ dotenv.config();
 
 async function main() {
   const app = express();
-  const port = process.env.PORT;
+  const port = process.env.PORT || 3400;
 
   require("./src/config/mongoose.config");
 
@@ -32,6 +32,8 @@ async function main() {
         "http://localhost:5173",
         "http://localhost:5174",
         "http://localhost:3000",
+        "https://vendo-frontend.vercel.app",
+        "https://vendo-frontend-git-main-hamidreza-babazamani.vercel.app",
       ],
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
